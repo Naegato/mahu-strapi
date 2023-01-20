@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  strapi:
+    build:
+      context: .
+      dockerfile: DockerfileDev
+    ports:
+      - "1337:1337"
+    working_dir: /app
+    volumes:
+      - db
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+
+volumes:
+  db:

@@ -1,0 +1,6 @@
+.editorconfig
+.cache
+.tmp
+node_module
+database
+.env.example
